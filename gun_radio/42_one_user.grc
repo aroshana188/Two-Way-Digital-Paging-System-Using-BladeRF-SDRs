@@ -1,0 +1,3446 @@
+options:
+  parameters:
+    author: Barry Duggan
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: packet transmit
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: pkt_8
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: pkt_8
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 16.0]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: access_key
+  id: variable
+  parameters:
+    comment: ''
+    value: '''11100001010110101110100010010011'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [320, 20.0]
+    rotation: 0
+    state: enabled
+- name: access_key_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '''11100001010110101110100010010011'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 444.0]
+    rotation: 0
+    state: enabled
+- name: cc_enc
+  id: variable_cc_encoder_def
+  parameters:
+    comment: ''
+    dim1: '1'
+    dim2: '1'
+    framebits: MTU*8
+    k: k
+    mode: fec.CC_TAILBITING
+    ndim: '0'
+    padding: 'True'
+    polys: polys
+    rate: '2'
+    state_start: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [264, 780.0]
+    rotation: 0
+    state: enabled
+- name: delay
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 1,0,1,1
+    label: Delay
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '200'
+    value: '42'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 736.0]
+    rotation: 0
+    state: enabled
+- name: excess_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.35'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 100.0]
+    rotation: 0
+    state: enabled
+- name: extra_bytes
+  id: variable
+  parameters:
+    comment: ''
+    value: '3200'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [520, 24.0]
+    rotation: 0
+    state: enabled
+- name: freq
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: 2e9
+    step: 100e3
+    stop: 6e9
+    value: 2.4e9
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 1000.0]
+    rotation: 0
+    state: enabled
+- name: freq_offset
+  id: variable_qtgui_range
+  parameters:
+    comment: 0,2,1,1
+    gui_hint: 0,2,1,1
+    label: 'Channel: Frequency Offset'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '-0.1'
+    step: '0.001'
+    stop: '0.1'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [208, 520.0]
+    rotation: 0
+    state: enabled
+- name: freq_offset
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 284.0]
+    rotation: 0
+    state: disabled
+- name: hdr_format
+  id: variable
+  parameters:
+    comment: header_format_default
+    value: digital.header_format_default(access_key, 0)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 260.0]
+    rotation: 0
+    state: enabled
+- name: k
+  id: variable
+  parameters:
+    comment: ''
+    value: '7'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [392, 644.0]
+    rotation: 0
+    state: enabled
+- name: nfilts
+  id: variable
+  parameters:
+    comment: ''
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 180.0]
+    rotation: 0
+    state: enabled
+- name: noise_volt
+  id: variable_qtgui_range
+  parameters:
+    comment: 0,0,1,1
+    gui_hint: 0,0,1,1
+    label: 'Channel: Noise Voltage'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '0.01'
+    stop: '1'
+    value: '00'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 520.0]
+    rotation: 0
+    state: enabled
+- name: noise_volt
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 372.0]
+    rotation: 0
+    state: disabled
+- name: num_duplicates
+  id: variable
+  parameters:
+    comment: ''
+    value: '8'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [632, 24.0]
+    rotation: 0
+    state: enabled
+- name: phase_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.05'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 444.0]
+    rotation: 0
+    state: disabled
+- name: phase_bw
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 'controls@1: 0,2,1,1'
+    label: 'Phase: Bandwidth'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0.0'
+    step: '0.01'
+    stop: '1.0'
+    value: 6.28/100.0
+    widget: slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [408, 504.0]
+    rotation: 0
+    state: disabled
+- name: phase_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: 6.28/100.0
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [120, 444.0]
+    rotation: 0
+    state: enabled
+- name: polys
+  id: variable
+  parameters:
+    comment: ''
+    value: '[109, 79]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 988.0]
+    rotation: 0
+    state: enabled
+- name: qpsk
+  id: variable_constellation_rect
+  parameters:
+    comment: ''
+    const_points: '[0.707+0.707j, -0.707+0.707j, -0.707-0.707j, 0.707-0.707j]'
+    imag_sect: '2'
+    precision: '8'
+    real_sect: '2'
+    rot_sym: '4'
+    soft_dec_lut: None
+    sym_map: '[0, 1, 2, 3]'
+    w_imag_sect: '1'
+    w_real_sect: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 156.0]
+    rotation: 0
+    state: enabled
+- name: rrc_taps
+  id: variable
+  parameters:
+    comment: ''
+    value: firdes.root_raised_cosine(nfilts, nfilts, 1.0/float(sps), 0.35, 11*sps*nfilts)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 180.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 600e3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 20.0]
+    rotation: 0
+    state: enabled
+- name: sample_rate_blade
+  id: variable
+  parameters:
+    comment: ''
+    value: 1.2e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [208, 684.0]
+    rotation: 0
+    state: enabled
+- name: sps
+  id: variable
+  parameters:
+    comment: ''
+    value: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 100.0]
+    rotation: 0
+    state: enabled
+- name: thresh
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 100.0]
+    rotation: 0
+    state: enabled
+- name: time_offset
+  id: variable_qtgui_range
+  parameters:
+    comment: 0,1,1,1
+    gui_hint: 0,1,1,1
+    label: 'Channel: Timing Offset'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0.999'
+    step: '0.0001'
+    stop: '1.001'
+    value: '1.000'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 672.0]
+    rotation: 0
+    state: enabled
+- name: time_offset
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [464, 436.0]
+    rotation: 0
+    state: disabled
+- name: tuning_offset
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Frequency Tuning
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: -70e3
+    step: '50'
+    stop: 70e3
+    value: -21e3
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 832.0]
+    rotation: 0
+    state: enabled
+- name: variable_adaptive_algorithm_0
+  id: variable_adaptive_algorithm
+  parameters:
+    comment: ''
+    cons: qpsk
+    delta: '10.0'
+    ffactor: '0.99'
+    modulus: '4'
+    step_size: '.0001'
+    type: cma
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 340.0]
+    rotation: 0
+    state: true
+- name: MTU
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: MTU
+    short_id: ''
+    type: intx
+    value: '1500'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 244.0]
+    rotation: 0
+    state: enabled
+- name: blocks_char_to_float_0
+  id: blocks_char_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    scale: '1'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3736, 792.0]
+    rotation: 0
+    state: enabled
+- name: blocks_message_debug_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [248, 1136.0]
+    rotation: 180
+    state: enabled
+- name: blocks_message_debug_0_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4616, 888.0]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '0.8'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1600, 800.0]
+    rotation: 0
+    state: disabled
+- name: blocks_pack_k_bits_bb_0
+  id: blocks_pack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    k: '8'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3816, 536.0]
+    rotation: 180
+    state: enabled
+- name: blocks_pack_k_bits_bb_0_0
+  id: blocks_pack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    k: '8'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1520, 1448.0]
+    rotation: 0
+    state: enabled
+- name: blocks_repack_bits_bb_1_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: MSB
+    endianness: gr.GR_MSB_FIRST
+    k: '8'
+    l: '1'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [944, 420.0]
+    rotation: 180
+    state: enabled
+- name: blocks_repack_bits_bb_1_0_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: MSB
+    endianness: gr.GR_MSB_FIRST
+    k: '1'
+    l: '8'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3840, 676.0]
+    rotation: 0
+    state: enabled
+- name: blocks_repack_bits_bb_1_0_0_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: MSB
+    endianness: gr.GR_MSB_FIRST
+    k: '1'
+    l: '8'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1472, 1284.0]
+    rotation: 180
+    state: enabled
+- name: blocks_repack_bits_bb_1_0_1
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: MSB
+    endianness: gr.GR_MSB_FIRST
+    k: '8'
+    l: '1'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3680, 1228.0]
+    rotation: 180
+    state: enabled
+- name: blocks_tagged_stream_mux_0
+  id: blocks_tagged_stream_mux
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    lengthtagname: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    ninputs: '2'
+    tag_preserve_head_pos: '0'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1200, 424.0]
+    rotation: 180
+    state: enabled
+- name: blocks_tagged_stream_mux_0_0
+  id: blocks_tagged_stream_mux
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    lengthtagname: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    ninputs: '2'
+    tag_preserve_head_pos: '0'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3936, 1224.0]
+    rotation: 180
+    state: enabled
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1000, 596.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3736, 1404.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0_1
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1616, 596.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0_1_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4088, 1604.0]
+    rotation: 180
+    state: enabled
+- name: blocks_unpack_k_bits_bb_0
+  id: blocks_unpack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: unpack 2 bits per symbol into bits
+    k: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4064, 536.0]
+    rotation: 180
+    state: enabled
+- name: blocks_unpack_k_bits_bb_0_0
+  id: blocks_unpack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: unpack 2 bits per symbol into bits
+    k: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1280, 1448.0]
+    rotation: 0
+    state: enabled
+- name: channels_channel_model_0
+  id: channels_channel_model
+  parameters:
+    affinity: ''
+    alias: ''
+    block_tags: 'False'
+    comment: Epsilon is the time offset
+    epsilon: time_offset
+    freq_offset: freq_offset
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_voltage: noise_volt
+    seed: '0'
+    taps: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1960, 560.0]
+    rotation: 0
+    state: enabled
+- name: channels_channel_model_0_0
+  id: channels_channel_model
+  parameters:
+    affinity: ''
+    alias: ''
+    block_tags: 'False'
+    comment: Epsilon is the time offset
+    epsilon: time_offset
+    freq_offset: freq_offset
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_voltage: noise_volt
+    seed: '0'
+    taps: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3576, 1632.0]
+    rotation: 180
+    state: enabled
+- name: digital_constellation_decoder_cb_0
+  id: digital_constellation_decoder_cb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: "Decode a constellation's points from \na complex space to index of constellation\
+      \ \nsymbol based on the map of the  object."
+    constellation: qpsk
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4480, 328.0]
+    rotation: 0
+    state: enabled
+- name: digital_constellation_decoder_cb_0_0
+  id: digital_constellation_decoder_cb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: "Decode a constellation's points from \na complex space to index of constellation\
+      \ \nsymbol based on the map of the  object."
+    constellation: qpsk
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [832, 1632.0]
+    rotation: 180
+    state: enabled
+- name: digital_constellation_modulator_0
+  id: digital_constellation_modulator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    differential: 'True'
+    excess_bw: excess_bw
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_symbol: sps
+    truncate: 'False'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1248, 580.0]
+    rotation: 0
+    state: enabled
+- name: digital_constellation_modulator_0_0
+  id: digital_constellation_modulator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    differential: 'True'
+    excess_bw: excess_bw
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_symbol: sps
+    truncate: 'False'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3984, 1388.0]
+    rotation: 0
+    state: enabled
+- name: digital_correlate_access_code_xx_ts_0
+  id: digital_correlate_access_code_xx_ts
+  parameters:
+    access_code: '"11100001010110101110100010010011"'
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tagname: packet_len
+    threshold: thresh
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3488, 668.0]
+    rotation: 0
+    state: enabled
+- name: digital_correlate_access_code_xx_ts_0_0
+  id: digital_correlate_access_code_xx_ts
+  parameters:
+    access_code: '"11100001010110101110100010010011"'
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tagname: packet_len
+    threshold: thresh
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1728, 1276.0]
+    rotation: 180
+    state: enabled
+- name: digital_costas_loop_cc_0_0
+  id: digital_costas_loop_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    order: '4'
+    use_snr: 'False'
+    w: phase_bw
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4176, 336.0]
+    rotation: 0
+    state: enabled
+- name: digital_costas_loop_cc_0_0_0
+  id: digital_costas_loop_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    order: '4'
+    use_snr: 'False'
+    w: phase_bw
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1168, 1648.0]
+    rotation: 180
+    state: enabled
+- name: digital_crc_append_0
+  id: digital_crc_append
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1624, 240.0]
+    rotation: 0
+    state: enabled
+- name: digital_crc_append_0_0
+  id: digital_crc_append
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4904, 1064.0]
+    rotation: 180
+    state: enabled
+- name: digital_crc_check_0
+  id: digital_crc_check
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Discard CRC = True
+    discard_crc: 'True'
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4688, 680.0]
+    rotation: 0
+    state: enabled
+- name: digital_crc_check_0_0
+  id: digital_crc_check
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Discard CRC = True
+    discard_crc: 'True'
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [728, 1120.0]
+    rotation: 0
+    state: enabled
+- name: digital_diff_decoder_bb_0
+  id: digital_diff_decoder_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    coding: digital.DIFF_DIFFERENTIAL
+    comment: "translate the differential coded symbols\n back to their original symbols"
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    modulus: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4496, 524.0]
+    rotation: 180
+    state: enabled
+- name: digital_diff_decoder_bb_0_0
+  id: digital_diff_decoder_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    coding: digital.DIFF_DIFFERENTIAL
+    comment: "translate the differential coded symbols\n back to their original symbols"
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    modulus: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [824, 1436.0]
+    rotation: 0
+    state: enabled
+- name: digital_linear_equalizer_0
+  id: digital_linear_equalizer
+  parameters:
+    adapt_after_training: 'True'
+    affinity: ''
+    alg: variable_adaptive_algorithm_0
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_taps: '4'
+    sps: '2'
+    training_sequence: '[ ]'
+    training_start_tag: corr_est
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3824, 336.0]
+    rotation: 0
+    state: enabled
+- name: digital_linear_equalizer_0_0
+  id: digital_linear_equalizer
+  parameters:
+    adapt_after_training: 'True'
+    affinity: ''
+    alg: variable_adaptive_algorithm_0
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_taps: '4'
+    sps: '2'
+    training_sequence: '[ ]'
+    training_start_tag: corr_est
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1520, 1648.0]
+    rotation: 180
+    state: enabled
+- name: digital_map_bb_0
+  id: digital_map_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: "convert the symbols \nfrom the differential decoder to the \noriginal\
+      \ symbols we transmitted."
+    map: '[0,1,2,3]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4272, 536.0]
+    rotation: 180
+    state: enabled
+- name: digital_map_bb_0_0
+  id: digital_map_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: "convert the symbols \nfrom the differential decoder to the \noriginal\
+      \ symbols we transmitted."
+    map: '[0,1,2,3]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1072, 1448.0]
+    rotation: 0
+    state: enabled
+- name: digital_protocol_formatter_async_0
+  id: digital_protocol_formatter_async
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    format: hdr_format
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1832, 424.0]
+    rotation: 180
+    state: enabled
+- name: digital_protocol_formatter_async_0_0
+  id: digital_protocol_formatter_async
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    format: hdr_format
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4568, 1224.0]
+    rotation: 180
+    state: enabled
+- name: digital_symbol_sync_xx_0
+  id: digital_symbol_sync_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: digital.constellation_bpsk().base()
+    damping: '1.0'
+    loop_bw: phase_bw
+    max_dev: '1.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nfilters: '32'
+    osps: '2'
+    pfb_mf_taps: rrc_taps
+    resamp_type: digital.IR_PFB_MF
+    sps: sps
+    ted_gain: '1.0'
+    ted_type: digital.TED_SIGNAL_TIMES_SLOPE_ML
+    type: cc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3392, 320.0]
+    rotation: 0
+    state: enabled
+- name: digital_symbol_sync_xx_0_0
+  id: digital_symbol_sync_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: digital.constellation_bpsk().base()
+    damping: '1.0'
+    loop_bw: phase_bw
+    max_dev: '1.5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nfilters: '32'
+    osps: '2'
+    pfb_mf_taps: rrc_taps
+    resamp_type: digital.IR_PFB_MF
+    sps: sps
+    ted_gain: '1.0'
+    ted_type: digital.TED_SIGNAL_TIMES_SLOPE_ML
+    type: cc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1888, 1644.0]
+    rotation: 180
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: File Source PDU (Corrected for 1-Byte\
+      \ SN)\n\"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nimport\
+      \ threading\nimport time\nimport struct\nimport os\n\nclass file_source_pdu(gr.basic_block):\n\
+      \    def __init__(self, filename='message.txt', pdu_size=64, delay=0.05):\n\
+      \        \"\"\"\n        Args:\n            filename: Path to the text file.\n\
+      \            pdu_size: Total size of the output PDU in bytes.\n            delay:\
+      \ Time delay between sending PDUs.\n        \"\"\"\n        gr.basic_block.__init__(self,\n\
+      \            name=\"File Source PDU\",\n            in_sig=None,\n         \
+      \   out_sig=None)\n\n        self.message_port_register_out(pmt.intern('pdu_out'))\n\
+      \n        self.filename = filename\n        self.pdu_size = pdu_size\n     \
+      \   self.delay = delay\n        \n        # FIXED: Hardcoded to 1 byte because\
+      \ your Receiver expects data_bytes[0] to be the SN\n        self.seq_len = 1\
+      \ \n        self.payload_size = self.pdu_size - self.seq_len\n\n        self.stop_thread\
+      \ = False\n        self.thread = threading.Thread(target=self.run)\n       \
+      \ self.thread.daemon = True\n\n    def start(self):\n        self.stop_thread\
+      \ = False\n        self.thread.start()\n        return True\n\n    def stop(self):\n\
+      \        self.stop_thread = True\n        if self.thread.is_alive():\n     \
+      \       self.thread.join()\n        return True\n\n    def run(self):\n    \
+      \    time.sleep(1)\n        \n        if not os.path.exists(self.filename):\n\
+      \            print(f\"[Error] File not found: {self.filename}\")\n         \
+      \   return\n\n        with open(self.filename, 'rb') as f:\n            file_content\
+      \ = f.read()\n\n        data = bytearray(file_content)\n        total_len =\
+      \ len(data)\n        num_packets = (total_len + self.payload_size - 1) // self.payload_size\n\
+      \        \n        print(f\"[File Source] Sending {total_len} bytes in {num_packets}\
+      \ packets.\")\n\n        seq_num = 0\n        \n        for i in range(0, total_len,\
+      \ self.payload_size):\n            if self.stop_thread:\n                break\n\
+      \n            # 1. Slice the data\n            chunk = data[i : i + self.payload_size]\n\
+      \            \n            # 2. Add Sequence Number (Header)\n            #\
+      \ FIXED: 'B' packs it as a single unsigned byte (0-255)\n            # We use\
+      \ % 256 to ensure it wraps around and doesn't crash if file is large\n     \
+      \       header = struct.pack('B', seq_num % 256) \n            \n          \
+      \  # 3. Add Padding (if needed)\n            current_len = len(chunk) + len(header)\n\
+      \            padding_len = self.pdu_size - current_len\n            \n     \
+      \       if padding_len > 0:\n                padding = b'\\x00' * padding_len\n\
+      \                chunk = chunk + padding\n            \n            # Combine\n\
+      \            full_packet = header + chunk\n            \n            # 4. Create\
+      \ PDU\n            meta = pmt.make_dict()\n            meta = pmt.dict_add(meta,\
+      \ pmt.intern(\"seq_num\"), pmt.from_long(seq_num))\n            \n         \
+      \   # Convert to PMT vector\n            pdu_vector = pmt.init_u8vector(len(full_packet),\
+      \ list(full_packet))\n            pdu = pmt.cons(meta, pdu_vector)\n       \
+      \     \n            # 5. Send\n            self.message_port_pub(pmt.intern('pdu_out'),\
+      \ pdu)\n            \n            print(f\"[Sent] Seq: {seq_num % 256}, Size:\
+      \ {len(full_packet)}\")\n            \n            seq_num += 1\n          \
+      \  time.sleep(self.delay)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    delay: '0.1'
+    filename: '"C:/Users/PC/Desktop/Input.txt"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pdu_size: '64'
+  states:
+    _io_cache: '(''File Source PDU'', ''file_source_pdu'', [(''filename'', "''message.txt''"),
+      (''pdu_size'', ''64''), (''delay'', ''0.05'')], [], [(''pdu_out'', ''message'',
+      1)], ''\n        Args:\n            filename: Path to the text file.\n            pdu_size:
+      Total size of the output PDU in bytes.\n            delay: Time delay between
+      sending PDUs.\n        '', [''delay'', ''filename'', ''pdu_size''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [624, 136.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0_0
+  id: epy_block
+  parameters:
+    _source_code: "import numpy as np\nfrom gnuradio import gr\nimport pmt\nimport\
+      \ time\n\nclass crc_fail_logger(gr.basic_block):\n    def __init__(self, log_file=''):\n\
+      \        gr.basic_block.__init__(self,\n            name=\"CRC Fail Logger\"\
+      ,\n            in_sig=None,\n            out_sig=None)\n\n        # INPUT: Connect\
+      \ this to the 'fail' port of the CRC Check block\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\
+      \        \n        self.fail_count = 0\n        \n        # LOGGING SETUP\n\
+      \        self.log_file_path = log_file\n        if self.log_file_path != '':\n\
+      \            try:\n                with open(self.log_file_path, 'w') as f:\n\
+      \                    f.write(\"--- CRC FAILURE LOG START ---\\n\")\n       \
+      \     except: pass\n\n    def log(self, message):\n        \"\"\"Helper function\
+      \ to Print AND Write to file\"\"\"\n        print(message)\n        if self.log_file_path\
+      \ != '':\n            try:\n                with open(self.log_file_path, 'a')\
+      \ as f:\n                    timestamp = time.strftime(\"%H:%M:%S\", time.localtime())\n\
+      \                    f.write(f\"[{timestamp}] {message}\\n\")\n            except:\
+      \ pass\n\n    def handle_msg(self, msg):\n        try:\n            self.fail_count\
+      \ += 1\n            \n            # Extract the length of the bad packet just\
+      \ for info\n            payload = pmt.cdr(msg)\n            data_len = len(pmt.u8vector_elements(payload))\n\
+      \            \n            self.log(f\"[CRC FAIL] Corrupted Packet Dropped!\
+      \ (Size: {data_len} bytes | Total Fails: {self.fail_count})\")\n           \
+      \ \n        except Exception as e:\n            self.log(f\"[CRC Log Error]\
+      \ {e}\")"
+    affinity: ''
+    alias: ''
+    comment: ''
+    log_file: '"C:/Users/PC/Desktop/Receiver log.txt"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('CRC Fail Logger', 'crc_fail_logger', [('log_file', "''")], [('pdu_in',
+      'message', 1)], [], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4904, 784.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Storage & ARQ Controller (With\
+      \ Debug Prints)\n\"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport\
+      \ pmt\nimport threading\nimport time\n\nclass pdu_arq_controller(gr.basic_block):\n\
+      \    def __init__(self, timeout_s=1.0, max_retries=5):\n        gr.basic_block.__init__(self,\n\
+      \            name=\"PDU Storage ARQ\",\n            in_sig=None,\n         \
+      \   out_sig=None)\n\n        # 1. Register Message Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_in(pmt.intern(\"request_in\"\
+      ))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\n    \
+      \    # 2. Bind Message Handlers\n        self.set_msg_handler(pmt.intern(\"\
+      pdu_in\"), self.handle_pdu)\n        self.set_msg_handler(pmt.intern(\"request_in\"\
+      ), self.handle_request)\n\n        # 3. State Variables\n        self.buffer\
+      \ = []          \n        self.curr_idx = 0         \n        self.retries =\
+      \ 0          \n        self.max_retries = max_retries\n        self.timeout_s\
+      \ = timeout_s \n        \n        # Timer and Thread Safety\n        self.timer\
+      \ = None\n        self.lock = threading.Lock() \n\n        print(f\"[ARQ] Block\
+      \ Initialized. Timeout: {self.timeout_s}s, Max Retries: {self.max_retries}\"\
+      )\n\n    def __del__(self):\n        self.stop_timer()\n\n    def stop_timer(self):\n\
+      \        if self.timer:\n            self.timer.cancel()\n            self.timer\
+      \ = None\n\n    def start_timer(self):\n        self.stop_timer() \n       \
+      \ # Create a new timer thread\n        self.timer = threading.Timer(self.timeout_s,\
+      \ self.handle_timeout)\n        self.timer.start()\n        # Debug Print\n\
+      \        # print(f\"[ARQ] Timer started for {self.timeout_s}s\") \n\n    def\
+      \ send_packet(self, index):\n        # Note: This function is usually called\
+      \ from inside a locked context\n        if index < len(self.buffer):\n     \
+      \       pdu = self.buffer[index]\n            \n            # Send PDU\n   \
+      \         self.message_port_pub(pmt.intern(\"pdu_out\"), pdu)\n            \n\
+      \            print(f\"[ARQ] SENT Packet {index} (Retry {self.retries}/{self.max_retries})\"\
+      )\n            \n            # Restart Timer\n            self.start_timer()\n\
+      \        else:\n            print(f\"[ARQ] Waiting... (Index {index} not in\
+      \ buffer of size {len(self.buffer)})\")\n\n    def handle_timeout(self):\n \
+      \       \"\"\" Triggered when timer expires \"\"\"\n        with self.lock:\n\
+      \            print(f\"[ARQ] TIMEOUT reached for Packet {self.curr_idx}\")\n\n\
+      \            if self.curr_idx >= len(self.buffer):\n                print(\"\
+      [ARQ] Buffer exhausted, nothing to send.\")\n                return\n\n    \
+      \        if self.retries < self.max_retries:\n                # Case A: Retry\
+      \ limit not reached -> Resend Same Packet\n                self.retries += 1\n\
+      \                print(f\"[ARQ] Retry limit not reached. Resending Packet {self.curr_idx}...\"\
+      )\n                self.send_packet(self.curr_idx)\n            else:\n    \
+      \            # Case B: Max retries reached -> Give Up & Move Next\n        \
+      \        print(f\"[ARQ] MAX RETRIES ({self.max_retries}) reached for Packet\
+      \ {self.curr_idx}. SKIPPING.\")\n                \n                self.curr_idx\
+      \ += 1\n                self.retries = 0 \n                \n              \
+      \  if self.curr_idx < len(self.buffer):\n                    print(f\"[ARQ]\
+      \ Advancing to Packet {self.curr_idx}\")\n                    self.send_packet(self.curr_idx)\n\
+      \                else:\n                    print(\"[ARQ] No more packets to\
+      \ send.\")\n\n    def handle_request(self, msg):\n        \"\"\" Triggered when\
+      \ receiver asks for a packet \"\"\"\n        with self.lock:\n            try:\n\
+      \                # Robust input parsing\n                if pmt.is_pdu(msg):\n\
+      \                    data = pmt.to_python(pmt.cdr(msg))\n                  \
+      \  req_num = int(data[0]) \n                elif pmt.is_integer(msg):\n    \
+      \                req_num = pmt.to_long(msg)\n                elif pmt.is_pair(msg):\
+      \ \n                    # Sometimes integers come as a pair (val . val)\n  \
+      \                  req_num = pmt.to_long(pmt.car(msg))\n                else:\n\
+      \                    print(f\"[ARQ] Error: Unknown request message format: {msg}\"\
+      )\n                    return\n            except Exception as e:\n        \
+      \        print(f\"[ARQ] Error parsing request: {e}\")\n                return\n\
+      \n            print(f\"[ARQ] REQUEST RECEIVED for Packet {req_num}\")\n\n  \
+      \          # Logic: Receiver wants 'req_num'\n            # We reset retries\
+      \ because the link is alive (we got a request)\n            self.curr_idx =\
+      \ req_num\n            self.retries = 0\n            \n            # Send immediately\
+      \ and restart timer\n            self.send_packet(self.curr_idx)\n\n    def\
+      \ handle_pdu(self, msg):\n        \"\"\" Triggered when File Source provides\
+      \ data \"\"\"\n        with self.lock:\n            self.buffer.append(msg)\n\
+      \            print(f\"[ARQ] STORED new PDU. Buffer size: {len(self.buffer)}\"\
+      )\n            \n            # If this is the FIRST packet arriving, kickstart\
+      \ the process\n            if len(self.buffer) == 1:\n                print(\"\
+      [ARQ] Starting transmission with Packet 0\")\n                self.curr_idx\
+      \ = 0\n                self.retries = 0\n                self.send_packet(0)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    max_retries: '10'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    timeout_s: '1'
+  states:
+    _io_cache: ('PDU Storage ARQ', 'pdu_arq_controller', [('timeout_s', '1.0'), ('max_retries',
+      '5')], [('request_in', 'message', 1), ('pdu_in', 'message', 1)], [('pdu_out',
+      'message', 1)], '', ['max_retries', 'timeout_s'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 172.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_10
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Prepend Dummy\n\"\"\"\n\nimport\
+      \ numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_prepend_dummy(gr.basic_block):\n\
+      \    def __init__(self, dummy_bytes=20):\n        \"\"\"\n        Args:\n  \
+      \          dummy_bytes: Number of '0x55' bytes to add to the front.\n      \
+      \  \"\"\"\n        gr.basic_block.__init__(self,\n            name=\"PDU Prepend\
+      \ Dummy\",\n            in_sig=None,\n            out_sig=None)\n\n        self.d_len\
+      \ = dummy_bytes\n\n        # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\
+      \        \n        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\
+      \n    def handle_msg(self, msg):\n        # 1. Validate Input\n        if not\
+      \ pmt.is_pdu(msg):\n            return\n\n        # 2. Extract Data\n      \
+      \  meta = pmt.car(msg)\n        data_pdu = pmt.cdr(msg)\n        original_data\
+      \ = list(pmt.u8vector_elements(data_pdu))\n        \n        # 3. Create Dummy\
+      \ Data\n        # We use 0x55 (Binary: 01010101) because it creates excellent\
+      \ \n        # bit transitions for synchronization.\n        dummy_pattern =\
+      \ [0x55] * self.d_len\n        \n        # 4. Prepend (Dummy + Original)\n \
+      \       new_data = dummy_pattern + original_data\n        \n        # 5. Pack\
+      \ and Publish\n        out_vector = pmt.init_u8vector(len(new_data), new_data)\n\
+      \        out_msg = pmt.cons(meta, out_vector)\n        \n        self.message_port_pub(pmt.intern(\"\
+      pdu_out\"), out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    dummy_bytes: extra_bytes
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: '(''PDU Prepend Dummy'', ''pdu_prepend_dummy'', [(''dummy_bytes'',
+      ''20'')], [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)], "\n        Args:\n            dummy_bytes:
+      Number of ''0x55'' bytes to add to the front.\n        ", [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2344, 352.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_10_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Prepend Dummy\n\"\"\"\n\nimport\
+      \ numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_prepend_dummy(gr.basic_block):\n\
+      \    def __init__(self, dummy_bytes=20):\n        \"\"\"\n        Args:\n  \
+      \          dummy_bytes: Number of '0x55' bytes to add to the front.\n      \
+      \  \"\"\"\n        gr.basic_block.__init__(self,\n            name=\"PDU Prepend\
+      \ Dummy\",\n            in_sig=None,\n            out_sig=None)\n\n        self.d_len\
+      \ = dummy_bytes\n\n        # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\
+      \        \n        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\
+      \n    def handle_msg(self, msg):\n        # 1. Validate Input\n        if not\
+      \ pmt.is_pdu(msg):\n            return\n\n        # 2. Extract Data\n      \
+      \  meta = pmt.car(msg)\n        data_pdu = pmt.cdr(msg)\n        original_data\
+      \ = list(pmt.u8vector_elements(data_pdu))\n        \n        # 3. Create Dummy\
+      \ Data\n        # We use 0x55 (Binary: 01010101) because it creates excellent\
+      \ \n        # bit transitions for synchronization.\n        dummy_pattern =\
+      \ [0x55] * self.d_len\n        \n        # 4. Prepend (Dummy + Original)\n \
+      \       new_data = dummy_pattern + original_data\n        \n        # 5. Pack\
+      \ and Publish\n        out_vector = pmt.init_u8vector(len(new_data), new_data)\n\
+      \        out_msg = pmt.cons(meta, out_vector)\n        \n        self.message_port_pub(pmt.intern(\"\
+      pdu_out\"), out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    dummy_bytes: '3200'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: '(''PDU Prepend Dummy'', ''pdu_prepend_dummy'', [(''dummy_bytes'',
+      ''20'')], [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)], "\n        Args:\n            dummy_bytes:
+      Number of ''0x55'' bytes to add to the front.\n        ", [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4336, 1080.0]
+    rotation: 180
+    state: disabled
+- name: epy_block_11
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Head Stripper\n\"\"\"\n\nimport\
+      \ numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_head_stripper(gr.basic_block):\n\
+      \    def __init__(self, strip_bytes=20):\n        \"\"\"\n        Args:\n  \
+      \          strip_bytes: Number of bytes to remove from the beginning of the\
+      \ packet.\n        \"\"\"\n        gr.basic_block.__init__(self,\n         \
+      \   name=\"PDU Head Stripper\",\n            in_sig=None,\n            out_sig=None)\n\
+      \n        self.n_strip = strip_bytes\n\n        # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\
+      \        \n        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\
+      \n    def handle_msg(self, msg):\n        # 1. Validate Input\n        if not\
+      \ pmt.is_pdu(msg):\n            return\n\n        # 2. Extract Data\n      \
+      \  meta = pmt.car(msg)\n        data_pdu = pmt.cdr(msg)\n        data_bytes\
+      \ = pmt.u8vector_elements(data_pdu)\n        \n        # 3. Safety Check\n \
+      \       # If packet is smaller than what we want to strip, drop it.\n      \
+      \  if len(data_bytes) <= self.n_strip:\n            return\n\n        # 4. Strip\
+      \ the Head\n        # We take everything starting from index 'n_strip' to the\
+      \ end\n        clean_data = data_bytes[self.n_strip:]\n        \n        # 5.\
+      \ Pack and Publish\n        out_vector = pmt.init_u8vector(len(clean_data),\
+      \ clean_data)\n        out_msg = pmt.cons(meta, out_vector)\n        \n    \
+      \    self.message_port_pub(pmt.intern(\"pdu_out\"), out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    strip_bytes: extra_bytes
+  states:
+    _io_cache: '(''PDU Head Stripper'', ''pdu_head_stripper'', [(''strip_bytes'',
+      ''20'')], [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)], ''\n        Args:\n            strip_bytes:
+      Number of bytes to remove from the beginning of the packet.\n        '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4264, 816.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_11_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Head Stripper\n\"\"\"\n\nimport\
+      \ numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_head_stripper(gr.basic_block):\n\
+      \    def __init__(self, strip_bytes=20):\n        \"\"\"\n        Args:\n  \
+      \          strip_bytes: Number of bytes to remove from the beginning of the\
+      \ packet.\n        \"\"\"\n        gr.basic_block.__init__(self,\n         \
+      \   name=\"PDU Head Stripper\",\n            in_sig=None,\n            out_sig=None)\n\
+      \n        self.n_strip = strip_bytes\n\n        # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\
+      \        \n        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\
+      \n    def handle_msg(self, msg):\n        # 1. Validate Input\n        if not\
+      \ pmt.is_pdu(msg):\n            return\n\n        # 2. Extract Data\n      \
+      \  meta = pmt.car(msg)\n        data_pdu = pmt.cdr(msg)\n        data_bytes\
+      \ = pmt.u8vector_elements(data_pdu)\n        \n        # 3. Safety Check\n \
+      \       # If packet is smaller than what we want to strip, drop it.\n      \
+      \  if len(data_bytes) <= self.n_strip:\n            return\n\n        # 4. Strip\
+      \ the Head\n        # We take everything starting from index 'n_strip' to the\
+      \ end\n        clean_data = data_bytes[self.n_strip:]\n        \n        # 5.\
+      \ Pack and Publish\n        out_vector = pmt.init_u8vector(len(clean_data),\
+      \ clean_data)\n        out_msg = pmt.cons(meta, out_vector)\n        \n    \
+      \    self.message_port_pub(pmt.intern(\"pdu_out\"), out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    strip_bytes: '3200'
+  states:
+    _io_cache: '(''PDU Head Stripper'', ''pdu_head_stripper'', [(''strip_bytes'',
+      ''20'')], [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)], ''\n        Args:\n            strip_bytes:
+      Number of bytes to remove from the beginning of the packet.\n        '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [928, 1224.0]
+    rotation: 180
+    state: disabled
+- name: epy_block_12
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: Priority PDU Mux\n\"\"\"\nimport\
+      \ numpy as np\nfrom gnuradio import gr\nimport pmt\nimport threading\n\nclass\
+      \ priority_mux(gr.basic_block):\n    def __init__(self):\n        gr.basic_block.__init__(self,\n\
+      \            name=\"Priority PDU Mux\",\n            in_sig=None,\n        \
+      \    out_sig=None)\n\n        # 1. Register Inputs\n        self.message_port_register_in(pmt.intern(\"\
+      data_in\"))\n        self.message_port_register_in(pmt.intern(\"ack_in\"))\n\
+      \        \n        # 2. Register Output\n        self.message_port_register_out(pmt.intern(\"\
+      pdu_out\"))\n\n        # 3. Bind Handlers\n        self.set_msg_handler(pmt.intern(\"\
+      data_in\"), self.handle_data)\n        self.set_msg_handler(pmt.intern(\"ack_in\"\
+      ), self.handle_ack)\n        \n        # Thread lock to prevent race conditions\
+      \ when two packets arrive at once\n        self.lock = threading.Lock()\n\n\
+      \    def handle_ack(self, msg):\n        \"\"\"\n        Handler for ACKs (High\
+      \ Priority).\n        These usually come from the ACK Generator.\n        \"\
+      \"\"\n        with self.lock:\n            # Pass through immediately\n    \
+      \        self.message_port_pub(pmt.intern(\"pdu_out\"), msg)\n            #\
+      \ Optional: print(\"[Mux] Forwarding ACK\")\n\n    def handle_data(self, msg):\n\
+      \        \"\"\"\n        Handler for Data Packets (Normal Priority).\n     \
+      \   These usually come from PDU Storage -> Add Addressing.\n        \"\"\"\n\
+      \        with self.lock:\n            # Pass through immediately\n         \
+      \   self.message_port_pub(pmt.intern(\"pdu_out\"), msg)\n            # Optional:\
+      \ print(\"[Mux] Forwarding Data\")"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Priority PDU Mux', 'priority_mux', [], [('ack_in', 'message', 1),
+      ('data_in', 'message', 1)], [('pdu_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1992, 264.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_12_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: Priority PDU Mux\n\"\"\"\nimport\
+      \ numpy as np\nfrom gnuradio import gr\nimport pmt\nimport threading\n\nclass\
+      \ priority_mux(gr.basic_block):\n    def __init__(self):\n        gr.basic_block.__init__(self,\n\
+      \            name=\"Priority PDU Mux\",\n            in_sig=None,\n        \
+      \    out_sig=None)\n\n        # 1. Register Inputs\n        self.message_port_register_in(pmt.intern(\"\
+      data_in\"))\n        self.message_port_register_in(pmt.intern(\"ack_in\"))\n\
+      \        \n        # 2. Register Output\n        self.message_port_register_out(pmt.intern(\"\
+      pdu_out\"))\n\n        # 3. Bind Handlers\n        self.set_msg_handler(pmt.intern(\"\
+      data_in\"), self.handle_data)\n        self.set_msg_handler(pmt.intern(\"ack_in\"\
+      ), self.handle_ack)\n        \n        # Thread lock to prevent race conditions\
+      \ when two packets arrive at once\n        self.lock = threading.Lock()\n\n\
+      \    def handle_ack(self, msg):\n        \"\"\"\n        Handler for ACKs (High\
+      \ Priority).\n        These usually come from the ACK Generator.\n        \"\
+      \"\"\n        with self.lock:\n            # Pass through immediately\n    \
+      \        self.message_port_pub(pmt.intern(\"pdu_out\"), msg)\n            #\
+      \ Optional: print(\"[Mux] Forwarding ACK\")\n\n    def handle_data(self, msg):\n\
+      \        \"\"\"\n        Handler for Data Packets (Normal Priority).\n     \
+      \   These usually come from PDU Storage -> Add Addressing.\n        \"\"\"\n\
+      \        with self.lock:\n            # Pass through immediately\n         \
+      \   self.message_port_pub(pmt.intern(\"pdu_out\"), msg)\n            # Optional:\
+      \ print(\"[Mux] Forwarding Data\")"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Priority PDU Mux', 'priority_mux', [], [('ack_in', 'message', 1),
+      ('data_in', 'message', 1)], [('pdu_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [5000, 904.0]
+    rotation: 180
+    state: disabled
+- name: epy_block_13
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Type Splitter\n\"\"\"\nimport\
+      \ numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_type_splitter(gr.basic_block):\n\
+      \    def __init__(self):\n        gr.basic_block.__init__(self,\n          \
+      \  name=\"PDU Type Splitter\",\n            in_sig=None,\n            out_sig=None)\n\
+      \n        self.message_port_register_in(pmt.intern(\"pdu_in\"))\n        \n\
+      \        # Two Outputs\n        self.message_port_register_out(pmt.intern(\"\
+      data_out\")) # To Sequence Checker\n        self.message_port_register_out(pmt.intern(\"\
+      ack_out\"))  # To PDU Storage\n\n        self.set_msg_handler(pmt.intern(\"\
+      pdu_in\"), self.handle_msg)\n\n    def handle_msg(self, msg):\n        if not\
+      \ pmt.is_pdu(msg):\n            return\n\n        # Data format: [Type (1B)]\
+      \ [Seq/Req (1B)] [Payload...]\n        # Note: Dest/Src were already stripped\
+      \ by the Address Filter\n        data_pdu = pmt.cdr(msg)\n        data_bytes\
+      \ = pmt.u8vector_elements(data_pdu)\n\n        if len(data_bytes) < 1:\n   \
+      \         return\n\n        pkt_type = data_bytes[0]\n        \n        # Strip\
+      \ the Type byte so the next blocks just see [SeqNum] [Payload]\n        clean_payload\
+      \ = data_bytes[1:]\n        \n        # Re-pack PDU\n        meta = pmt.car(msg)\n\
+      \        out_vector = pmt.init_u8vector(len(clean_payload), clean_payload)\n\
+      \        out_msg = pmt.cons(meta, out_vector)\n\n        if pkt_type == 0:\n\
+      \            # Type 0 = DATA -> Go to Sequence Checker\n            self.message_port_pub(pmt.intern(\"\
+      data_out\"), out_msg)\n        elif pkt_type == 1:\n            # Type 1 = ACK\
+      \ -> Go to PDU Storage (via ACK Extractor)\n            self.message_port_pub(pmt.intern(\"\
+      ack_out\"), out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('PDU Type Splitter', 'pdu_type_splitter', [], [('pdu_in', 'message',
+      1)], [('ack_out', 'message', 1), ('data_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1448, 1056.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_2
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Duplicator\n\"\"\"\n\nimport\
+      \ numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_duplicator(gr.basic_block):\n\
+      \    def __init__(self, num_duplicates=3):\n        # Default value ensures\
+      \ GRC doesn't throw an error\n        gr.basic_block.__init__(self,\n      \
+      \      name=\"PDU Duplicator\",\n            in_sig=None,\n            out_sig=None)\n\
+      \        \n        # Save parameter\n        self.n = num_duplicates\n\n   \
+      \     # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\
+      \        \n        # Bind Handler\n        self.set_msg_handler(pmt.intern(\"\
+      pdu_in\"), self.handle_msg)\n\n    def handle_msg(self, msg):\n        # 1.\
+      \ Check if the message is a valid PDU\n        if pmt.is_pdu(msg):\n       \
+      \     # Extract metadata and data vector\n            meta = pmt.car(msg)\n\
+      \            vector_data = pmt.cdr(msg)\n            \n            # 2. Convert\
+      \ PMT vector to a standard Python list of bytes\n            # The input 'vector_data'\
+      \ already contains [Payload + CRC]\n            input_bytes = pmt.u8vector_elements(vector_data)\n\
+      \            \n            # 3. Duplicate the list N times\n            # In\
+      \ Python, [1, 2] * 3 becomes [1, 2, 1, 2, 1, 2]\n            new_bytes = list(input_bytes)\
+      \ * self.n\n            \n            # 4. Create a new PMT u8vector from the\
+      \ long list\n            out_vector = pmt.init_u8vector(len(new_bytes), new_bytes)\n\
+      \            \n            # 5. Create the new PDU (preserving original metadata)\n\
+      \            out_msg = pmt.cons(meta, out_vector)\n            \n          \
+      \  # 6. Publish\n            self.message_port_pub(pmt.intern(\"pdu_out\"),\
+      \ out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_duplicates: num_duplicates
+  states:
+    _io_cache: ('PDU Duplicator', 'pdu_duplicator', [('num_duplicates', '3')], [('pdu_in',
+      'message', 1)], [('pdu_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2392, 256.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_2_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Duplicator\n\"\"\"\n\nimport\
+      \ numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_duplicator(gr.basic_block):\n\
+      \    def __init__(self, num_duplicates=3):\n        # Default value ensures\
+      \ GRC doesn't throw an error\n        gr.basic_block.__init__(self,\n      \
+      \      name=\"PDU Duplicator\",\n            in_sig=None,\n            out_sig=None)\n\
+      \        \n        # Save parameter\n        self.n = num_duplicates\n\n   \
+      \     # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\
+      \        \n        # Bind Handler\n        self.set_msg_handler(pmt.intern(\"\
+      pdu_in\"), self.handle_msg)\n\n    def handle_msg(self, msg):\n        # 1.\
+      \ Check if the message is a valid PDU\n        if pmt.is_pdu(msg):\n       \
+      \     # Extract metadata and data vector\n            meta = pmt.car(msg)\n\
+      \            vector_data = pmt.cdr(msg)\n            \n            # 2. Convert\
+      \ PMT vector to a standard Python list of bytes\n            # The input 'vector_data'\
+      \ already contains [Payload + CRC]\n            input_bytes = pmt.u8vector_elements(vector_data)\n\
+      \            \n            # 3. Duplicate the list N times\n            # In\
+      \ Python, [1, 2] * 3 becomes [1, 2, 1, 2, 1, 2]\n            new_bytes = list(input_bytes)\
+      \ * self.n\n            \n            # 4. Create a new PMT u8vector from the\
+      \ long list\n            out_vector = pmt.init_u8vector(len(new_bytes), new_bytes)\n\
+      \            \n            # 5. Create the new PDU (preserving original metadata)\n\
+      \            out_msg = pmt.cons(meta, out_vector)\n            \n          \
+      \  # 6. Publish\n            self.message_port_pub(pmt.intern(\"pdu_out\"),\
+      \ out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_duplicates: '8'
+  states:
+    _io_cache: ('PDU Duplicator', 'pdu_duplicator', [('num_duplicates', '3')], [('pdu_in',
+      'message', 1)], [('pdu_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4720, 1136.0]
+    rotation: 180
+    state: disabled
+- name: epy_block_2_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: AES Encrypt (Preserve SN)\n\"\"\"\
+      \n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nfrom Crypto.Cipher\
+      \ import AES\nfrom Crypto.Util.Padding import pad\n\nclass aes_encrypt_pdu(gr.basic_block):\n\
+      \    def __init__(self, key_str=\"1234567890123456\"):\n        \"\"\"\n   \
+      \     Args:\n            key_str: 16-byte encryption key (String)\n        \"\
+      \"\"\n        gr.basic_block.__init__(self,\n            name=\"AES Encrypt\
+      \ PDU\",\n            in_sig=None,\n            out_sig=None)\n\n        # Ensure\
+      \ key is 16 bytes (AES-128)\n        self.key = key_str.encode('utf-8')[:16].ljust(16,\
+      \ b'\\0')\n        # Fixed IV for simplicity (In production, use random IV and\
+      \ send it)\n        self.iv = b'\\x00' * 16\n\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\
+      \        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\n \
+      \   def handle_msg(self, msg):\n        if not pmt.is_pdu(msg):\n          \
+      \  return\n\n        meta = pmt.car(msg)\n        data_pdu = pmt.cdr(msg)\n\
+      \        data_bytes = bytearray(pmt.u8vector_elements(data_pdu))\n\n       \
+      \ if len(data_bytes) < 1:\n            return\n\n        # 1. Separate SN and\
+      \ Payload\n        sn_byte = data_bytes[0:1]       # First byte is Sequence\
+      \ Number\n        payload = data_bytes[1:]        # Rest is Data\n\n       \
+      \ # 2. Encrypt Payload\n        # We must create a new Cipher for every packet\
+      \ to reset state\n        cipher = AES.new(self.key, AES.MODE_CBC, self.iv)\n\
+      \        \n        try:\n            # Pad payload to be a multiple of 16 bytes\n\
+      \            encrypted_payload = cipher.encrypt(pad(payload, AES.block_size))\n\
+      \            \n            # 3. Reassemble: [SN] [Encrypted Payload]\n     \
+      \       new_data = sn_byte + encrypted_payload\n\n            # 4. Publish\n\
+      \            out_vector = pmt.init_u8vector(len(new_data), list(new_data))\n\
+      \            out_msg = pmt.cons(meta, out_vector)\n            self.message_port_pub(pmt.intern(\"\
+      pdu_out\"), out_msg)\n            \n        except Exception as e:\n       \
+      \     print(f\"[AES Encrypt] Error: {e}\")"
+    affinity: ''
+    alias: ''
+    comment: ''
+    key_str: '''1234567890123456'''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: '(''AES Encrypt PDU'', ''aes_encrypt_pdu'', [(''key_str'', "''1234567890123456''")],
+      [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)], ''\n        Args:\n            key_str:
+      16-byte encryption key (String)\n        '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 84.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_3
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Splitter\n\"\"\"\n\nimport numpy\
+      \ as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_splitter(gr.basic_block):\n\
+      \    def __init__(self, num_duplicates=10):\n        # Default num_duplicates\
+      \ set to 10 to match your transmitter image\n        gr.basic_block.__init__(self,\n\
+      \            name=\"PDU Splitter\",\n            in_sig=None,\n            out_sig=None)\n\
+      \        \n        self.n = num_duplicates\n\n        # Register Ports\n   \
+      \     self.message_port_register_in(pmt.intern(\"pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"\
+      pdu_out\"))\n        \n        # Bind Handler\n        self.set_msg_handler(pmt.intern(\"\
+      pdu_in\"), self.handle_msg)\n\n    def handle_msg(self, msg):\n        # Ensure\
+      \ we are handling a PDU\n        if pmt.is_pdu(msg):\n            meta = pmt.car(msg)\n\
+      \            vector_data = pmt.cdr(msg)\n            \n            # Convert\
+      \ PMT vector to Python list/tuple of bytes\n            data = pmt.u8vector_elements(vector_data)\n\
+      \            total_len = len(data)\n            \n            # Validation:\
+      \ The total length must be divisible by N\n            if total_len == 0 or\
+      \ (total_len % self.n != 0):\n                # If the packet size is wrong\
+      \ (likely due to noise shifting the header),\n                # we cannot safely\
+      \ split it. Drop it.\n                return\n\n            # Calculate the\
+      \ size of one sub-packet (Payload + CRC)\n            chunk_len = total_len\
+      \ // self.n\n            \n            # Loop N times to slice and send each\
+      \ copy\n            for i in range(self.n):\n                start = i * chunk_len\n\
+      \                end = start + chunk_len\n                \n               \
+      \ # Extract the slice\n                sub_packet = data[start:end]\n      \
+      \          \n                # Create new PMT vector\n                out_vector\
+      \ = pmt.init_u8vector(len(sub_packet), sub_packet)\n                \n     \
+      \           # Create new PDU (preserving original metadata)\n              \
+      \  out_msg = pmt.cons(meta, out_vector)\n                \n                #\
+      \ Send to output\n                self.message_port_pub(pmt.intern(\"pdu_out\"\
+      ), out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_duplicates: num_duplicates
+  states:
+    _io_cache: ('PDU Splitter', 'pdu_splitter', [('num_duplicates', '10')], [('pdu_in',
+      'message', 1)], [('pdu_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4472, 736.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_3_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Splitter\n\"\"\"\n\nimport numpy\
+      \ as np\nfrom gnuradio import gr\nimport pmt\n\nclass pdu_splitter(gr.basic_block):\n\
+      \    def __init__(self, num_duplicates=10):\n        # Default num_duplicates\
+      \ set to 10 to match your transmitter image\n        gr.basic_block.__init__(self,\n\
+      \            name=\"PDU Splitter\",\n            in_sig=None,\n            out_sig=None)\n\
+      \        \n        self.n = num_duplicates\n\n        # Register Ports\n   \
+      \     self.message_port_register_in(pmt.intern(\"pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"\
+      pdu_out\"))\n        \n        # Bind Handler\n        self.set_msg_handler(pmt.intern(\"\
+      pdu_in\"), self.handle_msg)\n\n    def handle_msg(self, msg):\n        # Ensure\
+      \ we are handling a PDU\n        if pmt.is_pdu(msg):\n            meta = pmt.car(msg)\n\
+      \            vector_data = pmt.cdr(msg)\n            \n            # Convert\
+      \ PMT vector to Python list/tuple of bytes\n            data = pmt.u8vector_elements(vector_data)\n\
+      \            total_len = len(data)\n            \n            # Validation:\
+      \ The total length must be divisible by N\n            if total_len == 0 or\
+      \ (total_len % self.n != 0):\n                # If the packet size is wrong\
+      \ (likely due to noise shifting the header),\n                # we cannot safely\
+      \ split it. Drop it.\n                return\n\n            # Calculate the\
+      \ size of one sub-packet (Payload + CRC)\n            chunk_len = total_len\
+      \ // self.n\n            \n            # Loop N times to slice and send each\
+      \ copy\n            for i in range(self.n):\n                start = i * chunk_len\n\
+      \                end = start + chunk_len\n                \n               \
+      \ # Extract the slice\n                sub_packet = data[start:end]\n      \
+      \          \n                # Create new PMT vector\n                out_vector\
+      \ = pmt.init_u8vector(len(sub_packet), sub_packet)\n                \n     \
+      \           # Create new PDU (preserving original metadata)\n              \
+      \  out_msg = pmt.cons(meta, out_vector)\n                \n                #\
+      \ Send to output\n                self.message_port_pub(pmt.intern(\"pdu_out\"\
+      ), out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_duplicates: '8'
+  states:
+    _io_cache: ('PDU Splitter', 'pdu_splitter', [('num_duplicates', '10')], [('pdu_in',
+      'message', 1)], [('pdu_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [736, 1304.0]
+    rotation: 180
+    state: disabled
+- name: epy_block_3_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: AES Decrypt\n\"\"\"\n\nimport numpy\
+      \ as np\nfrom gnuradio import gr\nimport pmt\nfrom Crypto.Cipher import AES\n\
+      from Crypto.Util.Padding import unpad\n\nclass aes_decrypt_pdu(gr.basic_block):\n\
+      \    def __init__(self, key_str=\"1234567890123456\"):\n        \"\"\"\n   \
+      \     Args:\n            key_str: Must match the Transmitter's key!\n      \
+      \  \"\"\"\n        gr.basic_block.__init__(self,\n            name=\"AES Decrypt\
+      \ PDU\",\n            in_sig=None,\n            out_sig=None)\n\n        self.key\
+      \ = key_str.encode('utf-8')[:16].ljust(16, b'\\0')\n        self.iv = b'\\x00'\
+      \ * 16\n\n        self.message_port_register_in(pmt.intern(\"pdu_in\"))\n  \
+      \      self.message_port_register_out(pmt.intern(\"pdu_out\"))\n        self.set_msg_handler(pmt.intern(\"\
+      pdu_in\"), self.handle_msg)\n\n    def handle_msg(self, msg):\n        if not\
+      \ pmt.is_pdu(msg):\n            return\n\n        meta = pmt.car(msg)\n    \
+      \    data_pdu = pmt.cdr(msg)\n        encrypted_bytes = bytes(pmt.u8vector_elements(data_pdu))\n\
+      \        \n        if len(encrypted_bytes) == 0:\n            return\n\n   \
+      \     # 1. Decrypt\n        cipher = AES.new(self.key, AES.MODE_CBC, self.iv)\n\
+      \n        try:\n            # 2. Decrypt and Unpad\n            decrypted_payload\
+      \ = unpad(cipher.decrypt(encrypted_bytes), AES.block_size)\n            \n \
+      \           # 3. Publish clean data\n            out_vector = pmt.init_u8vector(len(decrypted_payload),\
+      \ list(decrypted_payload))\n            out_msg = pmt.cons(meta, out_vector)\n\
+      \            self.message_port_pub(pmt.intern(\"pdu_out\"), out_msg)\n     \
+      \       \n        except ValueError:\n            # This happens if decryption\
+      \ fails (e.g. padding error due to corruption)\n            print(\"[AES Decrypt]\
+      \ Error: Padding incorrect (Packet corrupted?)\")\n        except Exception\
+      \ as e:\n            print(f\"[AES Decrypt] Error: {e}\")"
+    affinity: ''
+    alias: ''
+    comment: ''
+    key_str: '''1234567890123456'''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: '(''AES Decrypt PDU'', ''aes_decrypt_pdu'', [(''key_str'', "''1234567890123456''")],
+      [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)], "\n        Args:\n            key_str:
+      Must match the Transmitter''s key!\n        ", [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [5640, 664.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_4
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: Sequence Number Checker (IP Support)\n\
+      \"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass seq_num_checker(gr.basic_block):\n\
+      \    def __init__(self):\n        gr.basic_block.__init__(self,\n          \
+      \  name=\"Sequence Num Checker\",\n            in_sig=None,\n            out_sig=None)\n\
+      \n        # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        \n        # Output 1: Valid Data (to File Sink)\n      \
+      \  self.message_port_register_out(pmt.intern(\"pdu_out\"))\n        \n     \
+      \   # Output 2: Request/ACK Trigger (to ACK Generator)\n        self.message_port_register_out(pmt.intern(\"\
+      request_out\"))\n\n        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\
+      \n        # Internal State\n        self.rn = 0  # Expected Sequence Number\n\
+      \        print(\"[RX Checker] Block Initialized. Waiting for Packet 0.\")\n\n\
+      \    def handle_msg(self, msg):\n        if not pmt.is_pdu(msg):\n         \
+      \   return\n\n        meta = pmt.car(msg)\n        data_pdu = pmt.cdr(msg)\n\
+      \        data_bytes = list(pmt.u8vector_elements(data_pdu))\n        \n    \
+      \    if len(data_bytes) < 1:\n            return \n\n        # 1. Extract Source\
+      \ IP from Metadata\n        # The 'Address & Type Filter' saved this earlier.\n\
+      \        # It is a PMT u8vector (4 bytes).\n        src_ip_pmt = pmt.dict_ref(meta,\
+      \ pmt.intern(\"src_ip\"), pmt.PMT_NIL)\n        \n        if pmt.is_null(src_ip_pmt):\n\
+      \            # Fallback if metadata is missing (shouldn't happen)\n        \
+      \    # print(\"[RX Checker] Error: No Source IP in metadata\")\n           \
+      \ return\n\n        # 2. Get Sequence Number (First byte of payload)\n     \
+      \   sn_received = data_bytes[0]\n\n        # 3. Logic Check\n        if sn_received\
+      \ == self.rn:\n            # === MATCH: Valid Packet ===\n            \n   \
+      \         # A. Publish Payload (Strip Sequence Number)\n            payload\
+      \ = data_bytes[1:]\n            if len(payload) > 0:\n                out_vector\
+      \ = pmt.init_u8vector(len(payload), payload)\n                out_msg = pmt.cons(meta,\
+      \ out_vector)\n                self.message_port_pub(pmt.intern(\"pdu_out\"\
+      ), out_msg)\n            \n            # B. Update State\n            self.rn\
+      \ = (self.rn + 1) % 256\n            \n            # C. Send ACK (New RN)\n\
+      \            self.send_ack_request(self.rn, src_ip_pmt)\n            \n    \
+      \    else:\n            # === MISMATCH: Duplicate ===\n            # Re-send\
+      \ ACK for the CURRENT RN (Reminder)\n            self.send_ack_request(self.rn,\
+      \ src_ip_pmt)\n\n    def send_ack_request(self, req_num, target_ip_pmt):\n \
+      \       \"\"\"\n        Sends a pair: (Target_IP_PMT . Request_Number_Int)\n\
+      \        \"\"\"\n        msg_pair = pmt.cons(target_ip_pmt, pmt.from_long(req_num))\n\
+      \        self.message_port_pub(pmt.intern(\"request_out\"), msg_pair)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('Sequence Num Checker', 'seq_num_checker', [], [('pdu_in', 'message',
+      1)], [('request_out', 'message', 1), ('pdu_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [5256, 696.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_5
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU File Sink (With Append Option)\n\
+      \"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nimport os\n\
+      \nclass pdu_file_sink(gr.basic_block):\n    def __init__(self, filename=\"received_output.txt\"\
+      , append=False):\n        gr.basic_block.__init__(self,\n            name=\"\
+      PDU File Sink\",\n            in_sig=None,\n            out_sig=None)\n\n  \
+      \      self.filename = filename\n        self.append = append\n        self.file_handle\
+      \ = None\n\n        # Register Input Port\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\
+      \n        # Determine Mode: 'ab' = Append Binary, 'wb' = Write Binary (Overwrite)\n\
+      \        mode = 'ab' if self.append else 'wb'\n\n        try:\n            self.file_handle\
+      \ = open(self.filename, mode)\n            action = \"Appending to\" if self.append\
+      \ else \"Overwriting\"\n            print(f\"PDU File Sink: {action} {self.filename}\"\
+      )\n        except Exception as e:\n            print(f\"PDU File Sink Error:\
+      \ Could not open file. {e}\")\n\n    def handle_msg(self, msg):\n        # 1.\
+      \ Validate PDU\n        if not pmt.is_pdu(msg):\n            return\n\n    \
+      \    # 2. Extract Data\n        data_vector = pmt.cdr(msg)\n        \n     \
+      \   # 3. Convert to Bytes\n        data_bytes = bytearray(pmt.u8vector_elements(data_vector))\n\
+      \        \n        # 4. Write to Disk\n        if self.file_handle:\n      \
+      \      self.file_handle.write(data_bytes)\n            self.file_handle.flush()\
+      \ # Force save immediately\n\n    def __del__(self):\n        if self.file_handle:\n\
+      \            self.file_handle.close()"
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    filename: '"C:/Users/PC/Desktop/Output.txt"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('PDU File Sink', 'pdu_file_sink', [('filename', "'received_output.txt'"),
+      ('append', 'False')], [('pdu_in', 'message', 1)], [], '', ['append', 'filename'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [5728, 460.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_6
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Add Addressing (IP Support)\n\
+      \"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nimport struct\n\
+      import socket\n\nclass pdu_add_addressing(gr.basic_block):\n    def __init__(self,\
+      \ src_ip=\"192.168.1.10\", dest_ip=\"192.168.1.20\"):\n        \"\"\"\n    \
+      \    Args:\n            src_ip: Source IP Address (String, e.g., \"192.168.1.10\"\
+      )\n            dest_ip: Destination IP Address (String)\n        \"\"\"\n  \
+      \      gr.basic_block.__init__(self,\n            name=\"PDU Add Addressing\"\
+      ,\n            in_sig=None,\n            out_sig=None)\n\n        # Convert\
+      \ IP Strings to 4-byte binary format\n        # inet_aton converts \"192.168.1.1\"\
+      \ -> b'\\xc0\\xa8\\x01\\x01'\n        try:\n            self.src_bytes = socket.inet_aton(src_ip)\n\
+      \            self.dest_bytes = socket.inet_aton(dest_ip)\n        except OSError:\n\
+      \            print(f\"[Error] Invalid IP Address format: {src_ip} or {dest_ip}\"\
+      )\n            self.src_bytes = b'\\x00\\x00\\x00\\x00'\n            self.dest_bytes\
+      \ = b'\\x00\\x00\\x00\\x00'\n\n        self.TYPE_DATA = 0  # Type 0 = Data Message\n\
+      \n        # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\
+      \        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\n \
+      \   def handle_msg(self, msg):\n        if not pmt.is_pdu(msg):\n          \
+      \  return\n\n        meta = pmt.car(msg)\n        data_pdu = pmt.cdr(msg)\n\
+      \        data_bytes = bytearray(pmt.u8vector_elements(data_pdu))\n\n       \
+      \ # Create Header\n        # Structure: [ Dest (4B) ] [ Src (4B) ] [ TYPE (1B)\
+      \ ]\n        # '4s' means a string of 4 bytes. 'B' means 1 unsigned byte.\n\
+      \        header = struct.pack('!4s4sB', self.dest_bytes, self.src_bytes, self.TYPE_DATA)\n\
+      \n        # Prepend Header to Data\n        # Result: [Dest 4B] [Src 4B] [Type=0]\
+      \ [Seq Num] [Payload]\n        new_data = header + data_bytes\n\n        # Publish\n\
+      \        out_vector = pmt.init_u8vector(len(new_data), list(new_data))\n   \
+      \     out_msg = pmt.cons(meta, out_vector)\n        self.message_port_pub(pmt.intern(\"\
+      pdu_out\"), out_msg)"
+    affinity: ''
+    alias: ''
+    comment: ''
+    dest_ip: '"192.248.9.141"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    src_ip: '"192.248.9.141"'
+  states:
+    _io_cache: '(''PDU Add Addressing'', ''pdu_add_addressing'', [(''src_ip'', "''192.168.1.10''"),
+      (''dest_ip'', "''192.168.1.20''")], [(''pdu_in'', ''message'', 1)], [(''pdu_out'',
+      ''message'', 1)], ''\n        Args:\n            src_ip: Source IP Address (String,
+      e.g., "192.168.1.10")\n            dest_ip: Destination IP Address (String)\n        '',
+      [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1368, 80.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_7
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: Address & Type Filter (IP Support)\n\
+      \"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nimport socket\n\
+      \nclass addr_type_filter(gr.basic_block):\n    def __init__(self, my_ip=\"192.168.1.20\"\
+      ):\n        \"\"\"\n        Args:\n            my_ip: The IP address of THIS\
+      \ receiver (String).\n        \"\"\"\n        gr.basic_block.__init__(self,\n\
+      \            name=\"Address & Type Filter\",\n            in_sig=None,\n   \
+      \         out_sig=None)\n\n        self.my_ip_str = my_ip\n        \n      \
+      \  # Convert IP string to 4-byte binary\n        try:\n            self.my_ip_bytes\
+      \ = list(socket.inet_aton(self.my_ip_str))\n        except OSError:\n      \
+      \      print(f\"[Error] Invalid IP format: {my_ip}\")\n            self.my_ip_bytes\
+      \ = [0, 0, 0, 0]\n\n        # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        \n        # Output 1: Data PDUs (Goes to Sequence Checker)\n\
+      \        self.message_port_register_out(pmt.intern(\"data_out\"))\n        \n\
+      \        # Output 2: ACK Integers (Goes DIRECTLY to PDU Storage 'request_in')\n\
+      \        self.message_port_register_out(pmt.intern(\"ack_out\"))\n        \n\
+      \        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\n \
+      \   def handle_msg(self, msg):\n        # 1. Validate Input\n        if not\
+      \ pmt.is_pdu(msg):\n            return\n\n        data_pdu = pmt.cdr(msg)\n\
+      \        data_bytes = list(pmt.u8vector_elements(data_pdu))\n\n        # 2.\
+      \ Safety Check\n        # Header: [Dest 4B] [Src 4B] [Type 1B] [Seq/RN 1B] ...\n\
+      \        # We need at least 10 bytes to process a valid packet\n        if len(data_bytes)\
+      \ < 10:\n            return\n\n        # 3. Check Destination (Bytes 0-3)\n\
+      \        dest_received = data_bytes[0:4]\n        \n        if dest_received\
+      \ != self.my_ip_bytes:\n            # Not for us -> Drop it\n            return\n\
+      \n        # 4. Extract Header Info\n        src_received = data_bytes[4:8]\n\
+      \        pkt_type     = data_bytes[8]\n        seq_or_rn    = data_bytes[9]\n\
+      \n        # 5. Logic Branch\n        if pkt_type == 0:\n            # === CASE:\
+      \ DATA MESSAGE ===\n            # We need to send [Seq Num] [Payload] to the\
+      \ Sequence Checker.\n            # We strip the first 9 bytes (Dest, Src, Type).\n\
+      \            # We KEEP the Seq Num (Byte 9) because Sequence Checker needs it.\n\
+      \            clean_payload = data_bytes[9:] \n            \n            # Save\
+      \ Source IP to Metadata (Required for replying with ACK)\n            meta =\
+      \ pmt.car(msg)\n            src_ip_pmt = pmt.init_u8vector(4, src_received)\n\
+      \            meta = pmt.dict_add(meta, pmt.intern(\"src_ip\"), src_ip_pmt)\n\
+      \            \n            # Create PDU\n            out_vector = pmt.init_u8vector(len(clean_payload),\
+      \ clean_payload)\n            out_msg = pmt.cons(meta, out_vector)\n       \
+      \     \n            # Send to Sequence Checker\n            self.message_port_pub(pmt.intern(\"\
+      data_out\"), out_msg)\n\n        elif pkt_type == 1:\n            # === CASE:\
+      \ ACKNOWLEDGMENT ===\n            # The 'seq_or_rn' byte IS the Request Number\
+      \ we need.\n            # We don't need a PDU here; PDU Storage expects a simple\
+      \ Integer.\n            \n            # Create PMT Integer\n            ack_msg\
+      \ = pmt.from_long(seq_or_rn)\n            \n            # Send to PDU Storage\
+      \ (request_in)\n            self.message_port_pub(pmt.intern(\"ack_out\"), ack_msg)\n\
+      \            # print(f\"[RX Filter] Received ACK {seq_or_rn} from {src_received}\"\
+      )"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    my_ip: '"192.168.1.20"'
+  states:
+    _io_cache: '(''Address & Type Filter'', ''addr_type_filter'', [(''my_ip'', "''192.168.1.20''")],
+      [(''pdu_in'', ''message'', 1)], [(''ack_out'', ''message'', 1), (''data_out'',
+      ''message'', 1)], ''\n        Args:\n            my_ip: The IP address of THIS
+      receiver (String).\n        '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4968, 616.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_7_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Address Filter (With Metadata\
+      \ Save)\n\"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\
+      \nclass pdu_addr_filter(gr.basic_block):\n    def __init__(self, my_addr=2):\n\
+      \        gr.basic_block.__init__(self,\n            name=\"PDU Address Filter\"\
+      ,\n            in_sig=None,\n            out_sig=None)\n\n        # Parameter:\
+      \ The address of THIS receiver\n        self.my_addr = my_addr\n\n        #\
+      \ Register Ports\n        self.message_port_register_in(pmt.intern(\"pdu_in\"\
+      ))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n      \
+      \  \n        # Bind Handler\n        self.set_msg_handler(pmt.intern(\"pdu_in\"\
+      ), self.handle_msg)\n\n    def handle_msg(self, msg):\n        # 1. Validate\
+      \ Input\n        if not pmt.is_pdu(msg):\n            return\n\n        # 2.\
+      \ Extract Data\n        # Input Packet Format: [ Dest (1 Byte) ] [ Src (1 Byte)\
+      \ ] [ Seq Num ] [ Payload... ]\n        data_pdu = pmt.cdr(msg)\n        data_bytes\
+      \ = pmt.u8vector_elements(data_pdu)\n\n        # Safety Check: Packet must have\
+      \ at least 2 bytes (Dest + Src)\n        if len(data_bytes) < 2:\n         \
+      \   return\n\n        # 3. Read Addresses\n        dest_received = data_bytes[0]\n\
+      \        src_received  = data_bytes[1]\n\n        # 4. Filter Logic\n      \
+      \  if dest_received == self.my_addr:\n            # --- MATCH: Packet is for\
+      \ us ---\n            \n            # A. Strip the Address Header (First 2 bytes)\n\
+      \            # Remaining data: [ Seq Num ] [ Payload... ]\n            clean_payload\
+      \ = data_bytes[2:]\n            \n            # B. Get existing Metadata\n \
+      \           meta = pmt.car(msg)\n            \n            # C. IMPORTANT: Save\
+      \ Source Address to Metadata\n            # This allows the next block to know\
+      \ who sent this packet\n            meta = pmt.dict_add(meta, pmt.intern(\"\
+      src_addr\"), pmt.from_long(src_received))\n            \n            # D. Create\
+      \ new PDU\n            out_vector = pmt.init_u8vector(len(clean_payload), clean_payload)\n\
+      \            out_msg = pmt.cons(meta, out_vector)\n            \n          \
+      \  # E. Send to Output\n            self.message_port_pub(pmt.intern(\"pdu_out\"\
+      ), out_msg)\n            \n            # Optional Debug Print\n            #\
+      \ print(f\"[Addr Filter] Accepted packet from Src {src_received}\")\n      \
+      \      \n        else:\n            # --- MISMATCH: Packet is for someone else\
+      \ ---\n            # Drop it silently or print debug info\n            # print(f\"\
+      [Addr Filter] Dropped packet for Dest {dest_received} (I am {self.my_addr})\"\
+      )\n            pass"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    my_addr: '10'
+  states:
+    _io_cache: ('PDU Address Filter', 'pdu_addr_filter', [('my_addr', '2')], [('pdu_in',
+      'message', 1)], [('pdu_out', 'message', 1)], '', ['my_addr'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1336, 1168.0]
+    rotation: 0
+    state: disabled
+- name: epy_block_7_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: Address & Type Filter (IP Support)\n\
+      \"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nimport socket\n\
+      \nclass addr_type_filter(gr.basic_block):\n    def __init__(self, my_ip=\"192.168.1.20\"\
+      ):\n        \"\"\"\n        Args:\n            my_ip: The IP address of THIS\
+      \ receiver (String).\n        \"\"\"\n        gr.basic_block.__init__(self,\n\
+      \            name=\"Address & Type Filter\",\n            in_sig=None,\n   \
+      \         out_sig=None)\n\n        self.my_ip_str = my_ip\n        \n      \
+      \  # Convert IP string to 4-byte binary\n        try:\n            self.my_ip_bytes\
+      \ = list(socket.inet_aton(self.my_ip_str))\n        except OSError:\n      \
+      \      print(f\"[Error] Invalid IP format: {my_ip}\")\n            self.my_ip_bytes\
+      \ = [0, 0, 0, 0]\n\n        # Register Ports\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        \n        # Output 1: Data PDUs (Goes to Sequence Checker)\n\
+      \        self.message_port_register_out(pmt.intern(\"data_out\"))\n        \n\
+      \        # Output 2: ACK Integers (Goes DIRECTLY to PDU Storage 'request_in')\n\
+      \        self.message_port_register_out(pmt.intern(\"ack_out\"))\n        \n\
+      \        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\n \
+      \   def handle_msg(self, msg):\n        # 1. Validate Input\n        if not\
+      \ pmt.is_pdu(msg):\n            return\n\n        data_pdu = pmt.cdr(msg)\n\
+      \        data_bytes = list(pmt.u8vector_elements(data_pdu))\n\n        # 2.\
+      \ Safety Check\n        # Header: [Dest 4B] [Src 4B] [Type 1B] [Seq/RN 1B] ...\n\
+      \        # We need at least 10 bytes to process a valid packet\n        if len(data_bytes)\
+      \ < 10:\n            return\n\n        # 3. Check Destination (Bytes 0-3)\n\
+      \        dest_received = data_bytes[0:4]\n        \n        if dest_received\
+      \ != self.my_ip_bytes:\n            # Not for us -> Drop it\n            return\n\
+      \n        # 4. Extract Header Info\n        src_received = data_bytes[4:8]\n\
+      \        pkt_type     = data_bytes[8]\n        seq_or_rn    = data_bytes[9]\n\
+      \n        # 5. Logic Branch\n        if pkt_type == 0:\n            # === CASE:\
+      \ DATA MESSAGE ===\n            # We need to send [Seq Num] [Payload] to the\
+      \ Sequence Checker.\n            # We strip the first 9 bytes (Dest, Src, Type).\n\
+      \            # We KEEP the Seq Num (Byte 9) because Sequence Checker needs it.\n\
+      \            clean_payload = data_bytes[9:] \n            \n            # Save\
+      \ Source IP to Metadata (Required for replying with ACK)\n            meta =\
+      \ pmt.car(msg)\n            src_ip_pmt = pmt.init_u8vector(4, src_received)\n\
+      \            meta = pmt.dict_add(meta, pmt.intern(\"src_ip\"), src_ip_pmt)\n\
+      \            \n            # Create PDU\n            out_vector = pmt.init_u8vector(len(clean_payload),\
+      \ clean_payload)\n            out_msg = pmt.cons(meta, out_vector)\n       \
+      \     \n            # Send to Sequence Checker\n            self.message_port_pub(pmt.intern(\"\
+      data_out\"), out_msg)\n\n        elif pkt_type == 1:\n            # === CASE:\
+      \ ACKNOWLEDGMENT ===\n            # The 'seq_or_rn' byte IS the Request Number\
+      \ we need.\n            # We don't need a PDU here; PDU Storage expects a simple\
+      \ Integer.\n            \n            # Create PMT Integer\n            ack_msg\
+      \ = pmt.from_long(seq_or_rn)\n            \n            # Send to PDU Storage\
+      \ (request_in)\n            self.message_port_pub(pmt.intern(\"ack_out\"), ack_msg)\n\
+      \            # print(f\"[RX Filter] Received ACK {seq_or_rn} from {src_received}\"\
+      )"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    my_ip: '"192.168.1.10"'
+  states:
+    _io_cache: '(''Address & Type Filter'', ''addr_type_filter'', [(''my_ip'', "''192.168.1.20''")],
+      [(''pdu_in'', ''message'', 1)], [(''ack_out'', ''message'', 1), (''data_out'',
+      ''message'', 1)], ''\n        Args:\n            my_ip: The IP address of THIS
+      receiver (String).\n        '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [920, 928.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_8
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: ACK Generator (No Preamble, IP +\
+      \ Type Support)\n\"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport\
+      \ pmt\nimport struct\nimport time\nimport socket\n\nclass ack_generator(gr.basic_block):\n\
+      \    def __init__(self, my_ip=\"192.168.1.20\", payload_len=100, ack_interval=0.1):\n\
+      \        \"\"\"\n        Args:\n            my_ip: The IP of THIS receiver.\n\
+      \            payload_len: Padding length.\n            ack_interval: Throttling\
+      \ time for duplicate ACKs.\n        \"\"\"\n        gr.basic_block.__init__(self,\n\
+      \            name=\"ACK Generator\",\n            in_sig=None,\n           \
+      \ out_sig=None)\n\n        self.p_len = payload_len\n        self.interval =\
+      \ ack_interval\n        \n        # Constant: Type 1 = ACK\n        self.MSG_TYPE_ACK\
+      \ = 1\n\n        # Convert My IP to Bytes\n        try:\n            self.my_ip_bytes\
+      \ = socket.inet_aton(my_ip)\n        except OSError:\n            print(f\"\
+      [ACK Gen] Error: Invalid IP {my_ip}\")\n            self.my_ip_bytes = b'\\\
+      x00\\x00\\x00\\x00'\n\n        # State\n        self.last_dest_ip = None\n \
+      \       self.last_rn = -1\n        self.last_time = 0.0\n\n        self.message_port_register_in(pmt.intern(\"\
+      msg_in\"))\n        self.message_port_register_out(pmt.intern(\"pdu_out\"))\n\
+      \        self.set_msg_handler(pmt.intern(\"msg_in\"), self.handle_msg)\n\n \
+      \   def handle_msg(self, msg):\n        if not pmt.is_pair(msg):\n         \
+      \   return\n\n        # Extract Target IP and Request Number\n        target_ip_pmt\
+      \ = pmt.car(msg)\n        req_num = pmt.to_long(pmt.cdr(msg))\n        \n  \
+      \      if pmt.is_u8vector(target_ip_pmt):\n            target_ip_bytes = bytes(pmt.u8vector_elements(target_ip_pmt))\n\
+      \        else:\n            return\n\n        now = time.time()\n        should_send\
+      \ = False\n\n        # Throttling Logic\n        if (target_ip_bytes == self.last_dest_ip)\
+      \ and (req_num == self.last_rn):\n            if (now - self.last_time) >= self.interval:\n\
+      \                should_send = True\n        else:\n            should_send\
+      \ = True\n\n        if should_send:\n            self.last_dest_ip = target_ip_bytes\n\
+      \            self.last_rn = req_num\n            self.last_time = now\n    \
+      \        \n            # --- Create Header ---\n            # Format: [ Dest(4B)\
+      \ ] [ Src(4B) ] [ Type(1B) ] [ RN(1B) ]\n            # We set Type to 1 (self.MSG_TYPE_ACK)\n\
+      \            header = struct.pack('!4s4sBB', target_ip_bytes, self.my_ip_bytes,\
+      \ self.MSG_TYPE_ACK, req_num)\n\n            # --- Create Payload ---\n    \
+      \        # Padding to keep transmitter on air (using 0x55 pattern)\n       \
+      \     payload = b'\\x55' * self.p_len\n            \n            # --- Combine\
+      \ (No Preamble) ---\n            full_data = header + payload\n\n          \
+      \  # --- Publish ---\n            meta = pmt.make_dict()\n            out_vector\
+      \ = pmt.init_u8vector(len(full_data), list(full_data))\n            out_msg\
+      \ = pmt.cons(meta, out_vector)\n\n            self.message_port_pub(pmt.intern(\"\
+      pdu_out\"), out_msg)"
+    ack_interval: '0.5'
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    my_ip: '"192.168.1.20"'
+    payload_len: '32'
+  states:
+    _io_cache: '(''ACK Generator'', ''ack_generator'', [(''my_ip'', "''192.168.1.20''"),
+      (''payload_len'', ''100''), (''ack_interval'', ''0.1'')], [(''msg_in'', ''message'',
+      1)], [(''pdu_out'', ''message'', 1)], ''\n        Args:\n            my_ip:
+      The IP of THIS receiver.\n            payload_len: Padding length.\n            ack_interval:
+      Throttling time for duplicate ACKs.\n        '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [5344, 900.0]
+    rotation: 180
+    state: enabled
+- name: epy_block_9
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: ACK Extractor (PDU to Request Number)\n\
+      \"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass ack_extractor(gr.basic_block):\n\
+      \    def __init__(self):\n        gr.basic_block.__init__(self,\n          \
+      \  name=\"ACK Extractor\",\n            in_sig=None,\n            out_sig=None)\n\
+      \n        # Inputs and Outputs\n        self.message_port_register_in(pmt.intern(\"\
+      pdu_in\"))\n        self.message_port_register_out(pmt.intern(\"request_out\"\
+      ))\n        \n        self.set_msg_handler(pmt.intern(\"pdu_in\"), self.handle_msg)\n\
+      \n    def handle_msg(self, msg):\n        # 1. Validate Input\n        if not\
+      \ pmt.is_pdu(msg):\n            return\n\n        # 2. Get Data\n        # The\
+      \ PDU Address Filter has already stripped the Dest and Src bytes.\n        #\
+      \ So the data we see here is: [ RN ] [ Padding... ]\n        data_pdu = pmt.cdr(msg)\n\
+      \        data_bytes = pmt.u8vector_elements(data_pdu)\n\n        # Safety Check\n\
+      \        if len(data_bytes) < 1:\n            return\n\n        # 3. Extract\
+      \ Request Number (First byte)\n        rn = data_bytes[0]\n\n        # 4. Create\
+      \ PMT Integer Message\n        # This is exactly what the PDU Storage 'request_in'\
+      \ port expects\n        msg_out = pmt.from_long(rn)\n\n        # 5. Publish\n\
+      \        self.message_port_pub(pmt.intern(\"request_out\"), msg_out)\n     \
+      \   \n        # Debug Print\n        print(f\"[TX Side] Received ACK for Packet\
+      \ {rn}. Updating Storage.\")"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: ('ACK Extractor', 'ack_extractor', [], [('pdu_in', 'message', 1)],
+      [('request_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 856.0]
+    rotation: 180
+    state: disabled
+- name: pdu_pdu_to_tagged_stream_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Header
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1504, 392.0]
+    rotation: 180
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Payload
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1504, 464.0]
+    rotation: 180
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_0_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Payload
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4240, 1264.0]
+    rotation: 180
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_1
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: Header
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4240, 1192.0]
+    rotation: 180
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_0_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4056, 688.0]
+    rotation: 0
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_0_0_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1184, 1296.0]
+    rotation: 180
+    state: enabled
+- name: qtgui_const_sink_x_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '"after liner eq"'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4080, 132.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_const_sink_x_0_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1336, 732.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_const_sink_x_0_0_1
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: after symbol sync
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3712, 108.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_const_sink_x_0_0_1_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '"after costas loo"'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4392, 156.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_freq_sink_x_0
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: 433.92e6
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''''''
+    label2: ''''''
+    label3: ''''''
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    norm_window: 'False'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: complex
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: window.WIN_FLATTOP
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3216, 172.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_freq_sink_x_1
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''''''
+    label2: ''''''
+    label3: ''''''
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    norm_window: 'False'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: complex
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: window.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1336, 828.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_x_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [4392, 44.0]
+    rotation: 0
+    state: disabled
+- name: qtgui_time_sink_x_0_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3904, 860.0]
+    rotation: 0
+    state: enabled
+- name: soapy_bladerf_sink_0
+  id: soapy_bladerf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '10000'
+    center_freq: freq
+    comment: ''
+    dev_args: '0'
+    freq_correction: '0'
+    gain: '60'
+    samp_rate: sample_rate_blade
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1840, 796.0]
+    rotation: 0
+    state: disabled
+- name: soapy_bladerf_source_0
+  id: soapy_bladerf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '9000'
+    center_freq: freq
+    comment: ''
+    dev_args: '0'
+    freq_correction: '0'
+    gain: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: sample_rate_blade
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3120, 828.0]
+    rotation: 0
+    state: disabled
+- name: soapy_bladerf_source_0_0
+  id: soapy_bladerf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '9000'
+    center_freq: freq
+    comment: ''
+    dev_args: '0'
+    freq_correction: '0'
+    gain: '30'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: sample_rate_blade
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2352, 1544.0]
+    rotation: 180
+    state: disabled
+
+connections:
+- [blocks_char_to_float_0, '0', qtgui_time_sink_x_0_0, '0']
+- [blocks_multiply_const_vxx_0, '0', soapy_bladerf_sink_0, '0']
+- [blocks_pack_k_bits_bb_0, '0', digital_correlate_access_code_xx_ts_0, '0']
+- [blocks_pack_k_bits_bb_0_0, '0', digital_correlate_access_code_xx_ts_0_0, '0']
+- [blocks_repack_bits_bb_1_0, '0', blocks_throttle2_0, '0']
+- [blocks_repack_bits_bb_1_0_0, '0', pdu_tagged_stream_to_pdu_0_0, '0']
+- [blocks_repack_bits_bb_1_0_0_0, '0', pdu_tagged_stream_to_pdu_0_0_0, '0']
+- [blocks_repack_bits_bb_1_0_1, '0', blocks_throttle2_0_0, '0']
+- [blocks_tagged_stream_mux_0, '0', blocks_repack_bits_bb_1_0, '0']
+- [blocks_tagged_stream_mux_0_0, '0', blocks_repack_bits_bb_1_0_1, '0']
+- [blocks_throttle2_0, '0', digital_constellation_modulator_0, '0']
+- [blocks_throttle2_0_0, '0', digital_constellation_modulator_0_0, '0']
+- [blocks_throttle2_0_1, '0', channels_channel_model_0, '0']
+- [blocks_throttle2_0_1_0, '0', channels_channel_model_0_0, '0']
+- [blocks_unpack_k_bits_bb_0, '0', blocks_char_to_float_0, '0']
+- [blocks_unpack_k_bits_bb_0, '0', blocks_pack_k_bits_bb_0, '0']
+- [blocks_unpack_k_bits_bb_0_0, '0', blocks_pack_k_bits_bb_0_0, '0']
+- [channels_channel_model_0, '0', digital_symbol_sync_xx_0, '0']
+- [channels_channel_model_0, '0', qtgui_freq_sink_x_0, '0']
+- [channels_channel_model_0_0, '0', digital_symbol_sync_xx_0_0, '0']
+- [digital_constellation_decoder_cb_0, '0', digital_diff_decoder_bb_0, '0']
+- [digital_constellation_decoder_cb_0_0, '0', digital_diff_decoder_bb_0_0, '0']
+- [digital_constellation_modulator_0, '0', blocks_multiply_const_vxx_0, '0']
+- [digital_constellation_modulator_0, '0', blocks_throttle2_0_1, '0']
+- [digital_constellation_modulator_0, '0', qtgui_const_sink_x_0_0, '0']
+- [digital_constellation_modulator_0, '0', qtgui_freq_sink_x_1, '0']
+- [digital_constellation_modulator_0_0, '0', blocks_throttle2_0_1_0, '0']
+- [digital_correlate_access_code_xx_ts_0, '0', blocks_repack_bits_bb_1_0_0, '0']
+- [digital_correlate_access_code_xx_ts_0_0, '0', blocks_repack_bits_bb_1_0_0_0, '0']
+- [digital_costas_loop_cc_0_0, '0', digital_constellation_decoder_cb_0, '0']
+- [digital_costas_loop_cc_0_0, '0', qtgui_const_sink_x_0_0_1_0, '0']
+- [digital_costas_loop_cc_0_0, '0', qtgui_time_sink_x_0, '0']
+- [digital_costas_loop_cc_0_0_0, '0', digital_constellation_decoder_cb_0_0, '0']
+- [digital_crc_append_0, out, epy_block_12, data_in]
+- [digital_crc_append_0_0, out, digital_protocol_formatter_async_0_0, in]
+- [digital_crc_append_0_0, out, epy_block_2_0, pdu_in]
+- [digital_crc_check_0, fail, epy_block_0_0, pdu_in]
+- [digital_crc_check_0, ok, epy_block_7, pdu_in]
+- [digital_crc_check_0_0, ok, epy_block_7_0, pdu_in]
+- [digital_crc_check_0_0, ok, epy_block_7_1, pdu_in]
+- [digital_diff_decoder_bb_0, '0', digital_map_bb_0, '0']
+- [digital_diff_decoder_bb_0_0, '0', digital_map_bb_0_0, '0']
+- [digital_linear_equalizer_0, '0', digital_costas_loop_cc_0_0, '0']
+- [digital_linear_equalizer_0, '0', qtgui_const_sink_x_0, '0']
+- [digital_linear_equalizer_0_0, '0', digital_costas_loop_cc_0_0_0, '0']
+- [digital_map_bb_0, '0', blocks_unpack_k_bits_bb_0, '0']
+- [digital_map_bb_0_0, '0', blocks_unpack_k_bits_bb_0_0, '0']
+- [digital_protocol_formatter_async_0, header, pdu_pdu_to_tagged_stream_0, pdus]
+- [digital_protocol_formatter_async_0, payload, pdu_pdu_to_tagged_stream_0_0, pdus]
+- [digital_protocol_formatter_async_0_0, header, pdu_pdu_to_tagged_stream_0_1, pdus]
+- [digital_protocol_formatter_async_0_0, payload, pdu_pdu_to_tagged_stream_0_0_0,
+  pdus]
+- [digital_symbol_sync_xx_0, '0', digital_linear_equalizer_0, '0']
+- [digital_symbol_sync_xx_0, '0', qtgui_const_sink_x_0_0_1, '0']
+- [digital_symbol_sync_xx_0_0, '0', digital_linear_equalizer_0_0, '0']
+- [epy_block_0, pdu_out, epy_block_2_1, pdu_in]
+- [epy_block_1, pdu_out, epy_block_6, pdu_in]
+- [epy_block_10, pdu_out, digital_protocol_formatter_async_0, in]
+- [epy_block_10_0, pdu_out, blocks_message_debug_0_0, print]
+- [epy_block_10_0, pdu_out, digital_protocol_formatter_async_0_0, in]
+- [epy_block_11, pdu_out, epy_block_3, pdu_in]
+- [epy_block_11_0, pdu_out, epy_block_3_0, pdu_in]
+- [epy_block_12, pdu_out, digital_protocol_formatter_async_0, in]
+- [epy_block_12, pdu_out, epy_block_2, pdu_in]
+- [epy_block_12_0, pdu_out, digital_crc_append_0_0, in]
+- [epy_block_13, ack_out, epy_block_9, pdu_in]
+- [epy_block_2, pdu_out, epy_block_10, pdu_in]
+- [epy_block_2_0, pdu_out, epy_block_10_0, pdu_in]
+- [epy_block_2_1, pdu_out, epy_block_1, pdu_in]
+- [epy_block_3, pdu_out, digital_crc_check_0, in]
+- [epy_block_3_0, pdu_out, digital_crc_check_0_0, in]
+- [epy_block_3_1, pdu_out, epy_block_5, pdu_in]
+- [epy_block_4, pdu_out, epy_block_3_1, pdu_in]
+- [epy_block_4, request_out, epy_block_8, msg_in]
+- [epy_block_6, pdu_out, digital_crc_append_0, in]
+- [epy_block_7, data_out, epy_block_4, pdu_in]
+- [epy_block_7_0, pdu_out, epy_block_13, pdu_in]
+- [epy_block_7_1, ack_out, blocks_message_debug_0, print]
+- [epy_block_7_1, ack_out, epy_block_1, request_in]
+- [epy_block_7_1, ack_out, epy_block_9, pdu_in]
+- [epy_block_8, pdu_out, blocks_message_debug_0_0, print]
+- [epy_block_8, pdu_out, digital_crc_append_0_0, in]
+- [epy_block_8, pdu_out, epy_block_12_0, ack_in]
+- [epy_block_9, request_out, blocks_message_debug_0, print]
+- [epy_block_9, request_out, epy_block_1, request_in]
+- [pdu_pdu_to_tagged_stream_0, '0', blocks_tagged_stream_mux_0, '0']
+- [pdu_pdu_to_tagged_stream_0_0, '0', blocks_tagged_stream_mux_0, '1']
+- [pdu_pdu_to_tagged_stream_0_0_0, '0', blocks_tagged_stream_mux_0_0, '1']
+- [pdu_pdu_to_tagged_stream_0_1, '0', blocks_tagged_stream_mux_0_0, '0']
+- [pdu_tagged_stream_to_pdu_0_0, pdus, digital_crc_check_0, in]
+- [pdu_tagged_stream_to_pdu_0_0, pdus, epy_block_11, pdu_in]
+- [pdu_tagged_stream_to_pdu_0_0_0, pdus, digital_crc_check_0_0, in]
+- [pdu_tagged_stream_to_pdu_0_0_0, pdus, epy_block_11_0, pdu_in]
+- [soapy_bladerf_source_0, '0', digital_symbol_sync_xx_0, '0']
+- [soapy_bladerf_source_0, '0', qtgui_freq_sink_x_0, '0']
+- [soapy_bladerf_source_0_0, '0', digital_symbol_sync_xx_0_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.12.0

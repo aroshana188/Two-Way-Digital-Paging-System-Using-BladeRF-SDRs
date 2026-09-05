@@ -37,6 +37,6 @@ The software architecture dictates the complete lifecycle of the digital paging 
 ## 🤝 The Engineering Team
 This communication testbed was engineered by undergraduates at the Department of Electronic and Telecommunication Engineering, University of Moratuwa:
 *   **Pramod Aroshana**
-*   **[Hasindu Wanigasundara]**
-*   **[Deelaka de Mel]**
-*   **[Rakesh Ratheeshan]**
+*   **Hasindu Wanigasundara**
+*   **Deelaka de Mel**
+*   **Rakesh Ratheeshan**
